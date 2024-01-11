@@ -71,10 +71,21 @@ img{
 #search-bar{
     height: 10%;
 }
+#user-list{
+    height: 70%;
+}
 /* 
     CHAT
 */
 #conversation{
     background-image: url(../img/mine.jpg);
     height: 80%;
+}
+.inviated{
+    background-color: #D5F9BA;
+    min-width: 40%;
+}
+.received{
+    background-color: white;
+    min-width: 40%;
 }

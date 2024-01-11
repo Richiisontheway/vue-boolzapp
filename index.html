@@ -70,8 +70,30 @@
                 </form>
 
             </nav>
-            <div class="bg-body-tertiary">
-                <div class="user"></div>
+            <div class="bg-body-tertiary overflow-y-scroll" id="user-list">
+
+                <div id="app">
+
+                    <div v-for="user in contacts" class="d-flex user align-items-center ">
+
+                            <div class="img-container">
+
+                                <img :src="user.avatar" alt="">
+
+                            </div>
+
+                        {{user.name}}
+                        <div>
+
+                            <span>
+
+                                {{user.messages.date}}
+
+                            </span>
+                        </div>
+
+                    </div>
+                    
             </div>
             
         </aside>
@@ -95,19 +117,25 @@
             </div>
             <div id="conversation">
 
-                <div>
+                <div class="d-flex justify-content-end">
 
-                    Hai studiato javascript?
-
-                </div>
-                <div>
-
-                    hai lavorato in cina
+                    <div class="inviated m-4 p-2 rounded">
+                        ciao
+                    </div>
 
                 </div>
-                <div>
+                <div class="d-flex justify-content-end">
 
-                    tutto fatto kim jong gum
+                    <div class="inviated m-4 p-2 rounded">
+                        ciao
+                    </div>
+
+                </div>               
+                <div class="d-flex ">
+
+                    <div class="received m-4 p-2 rounded ">
+                        helo
+                    </div>
 
                 </div>
             </div>
