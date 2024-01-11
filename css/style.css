@@ -11,3 +11,70 @@
 /* 
     GENERAL
 */
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #DCDBD1;
+    background-image: linear-gradient(to right, #009688, #009688);
+    background-size: 100% 15%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    bottom: 40%;
+    transform: translate(-50%, -50%);
+    height: 90vh;
+    margin:10px 0;
+}
+
+/* 
+    MAIN
+*/
+#aside{
+    width: 40%;
+    background-color: yellowgreen;
+}
+#chat{
+    width: 60%;
+    height: 100%;
+}
+/* 
+    ASIDE
+*/
+.img-container{
+    width: 50px;
+    margin: 5px 10px;
+}
+img{
+    width: 100%;
+}
+#bell-container{
+    border-radius: 50%;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 5px;
+}
+.user{
+    height: 10%;
+}
+#notification{
+    height: 10%;
+}
+
+#search-bar{
+    height: 10%;
+}
+/* 
+    CHAT
+*/
+#conversation{
+    background-image: url(../img/mine.jpg);
+    height: 80%;
+}
