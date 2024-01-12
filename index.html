@@ -72,7 +72,7 @@
             </nav>
             <div class="bg-body-tertiary overflow-y-scroll" id="user-list">
 
-                <div id="app">
+                <div id="app" class="overflow-hidden ">
 
                     <div v-for="user in contacts" class="user d-flex align-items-center ">
 
@@ -81,7 +81,7 @@
                                 <img :src="user.avatar" alt="">
 
                             </div>
-                            <div class="d-flex flex-column ">
+                            <div class="d-flex flex-column flex-grow-1 ">
                                 {{user.name}}
                                 <span>
 
@@ -89,7 +89,7 @@
 
                                 </span>
                             </div>
-                            <div class="text-end">
+                            <div class="text-end date">
 
                                 {{user.messages[user.messages.length-1].date}}
 
@@ -107,7 +107,7 @@
             
         </aside>
         <div id="chat">
-            <div class="user d-flex bg-body-tertiary  ">
+            <div class="user d-flex bg-body-tertiary">
 
                 <div class="img-container align-items-center ">
 
@@ -148,11 +148,26 @@
 
                 </div>
             </div>
-            <div id="write-area" class="bg-body-tertiary text-center">
-                <form>
-                    <input type="text" class="w-75">
+            <div id="write-area" class="bg-body-tertiary d-flex align-items-center">
+
+                <div class="text-center icon">
+
+                    <i class="fa-regular fa-face-smile" style="color: #bdbdbd;"></i>
+
+                </div>
+                <form class="flex-grow-1 "> 
+
+                    <input type="text" class="w-100 ">
+
                 </form>
+                <div class="text-center icon">
+
+                    <i class="fa-solid fa-microphone" style="color: #c2c2c2;"></i>
+
+                </div>
+
             </div>
+
         </div>
 
     </main>

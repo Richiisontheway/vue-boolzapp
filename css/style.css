@@ -47,6 +47,7 @@ main{
 .img-container{
     width: 50px;
     margin: 5px 10px;
+    flex-shrink: 0;
 }
 img{
     width: 100%;
@@ -63,6 +64,9 @@ img{
 }
 .user{
     height: 10%;
+}
+.date{
+    max-width: 15%;
 }
 #notification{
     height: 10%;
@@ -91,4 +95,7 @@ img{
 }
 #write-area{
     height: 10%;
+}
+.icon{
+    width: 10%;
 }
