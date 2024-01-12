@@ -5,6 +5,8 @@ createApp({
     data() {
         return {
             counter: 0,
+            newMessage:'',
+            searchText: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -169,10 +171,49 @@ createApp({
                 }
             ]
             
-    }
+        };
     
-    }
-    
+    },
+    methods: {
+        nuova(){
+            if(this.newMessage.trim().length > 0){
+                let newest = {
+                    message:this.newMessage,
+                    status:'sent',
+                    date: '10/01/2020 15:30:55'
+                };
 
+                this.contacts[this.counter].messages.push(newest);
+                this.newMessage = '';
+            }
+            let botResponse;
+            botResponse = setTimeout(() => {
+                let response = {
+                    message: 'Ok!',
+                    status: 'receveid',
+                    date:'10/01/2020 15:30:55'
+                }
+                console.log(response)
+                this.contacts[this.counter].messages.push(response);
+                this.newMessage = '';
+                
+            }, 1000);
+
+        
+            },
+            searchContact() {
+                for (let i = 0; i < this.contacts.length; i++) {
+                    const element = this.contacts[i].name.toLowerCase();
+                    if(element.includes(this.searchText)){
+                        this.contacts[i].visible = true;
+
+                    }
+                    else{
+                        this.contacts[i].visible = false;
+                    }
+                }
+            }
+        },
 
 }).mount('#app')
+

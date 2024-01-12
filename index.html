@@ -59,29 +59,30 @@
                 </div>
                 <nav class="navbar bg-body-tertiary" id="search-bar">
     
-                    <form class="container-fluid">
+                    <div class="container-fluid">
     
                         <div class="input-group">
     
                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass" style="color: #c7c9cc;"></i></span>
-                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-                        
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"
+                            v-model="searchText" @keyup="searchContact()">
+                            
                         </div>
     
-                    </form>
+                    </div>
     
                 </nav>
                 <div class="bg-body-tertiary overflow-y-scroll" id="user-list">
     
                     <div class="overflow-hidden" id="utent-list">
-    
-                        <div v-for="(user,i) in contacts "  
-                            class="user d-flex align-items-center" 
+
+                        <div v-for="(user,i) in contacts "
                             :class="{active :counter == i}"
                             @click="counter=i">
-    
+
+                            <div v-if="user.visible === true" class="user d-flex align-items-center " >
                                 <div class="img-container">
-    
+
                                     <img :src="user.avatar" alt="">
     
                                 </div>
@@ -95,14 +96,10 @@
                                 </div>
                                 <div class="text-end date">
     
-                                    {{user.messages[user.messages.length-1].date}}
+                                    {{user.messages[user.messages.length-1].date.split(' ')[1]}}
     
                                 </div>
-    
-                            <div>
-    
-                                
-                            
+
                             </div>
     
                         </div>
@@ -117,20 +114,20 @@
     
                     <div class="img-container align-items-center ">
     
-                        <img src="./img/avatar_2.jpg" alt="">
+                        <img :src="contacts[counter].avatar" alt="">
     
                     </div>
                     <div>
                         <span>
-                            Michele
+                            {{ contacts[counter].name}}
                         </span>
                         <div>
-                            12:45
+                            13:00
                         </div>
                     </div>
     
                 </div>
-                <div id="conversation">
+                <div id="conversation" class="overflow-auto ">
                     
                     <div class="d-grid">
                         <div class="m-4 p-2 rounded"
@@ -172,11 +169,12 @@
                         <i class="fa-regular fa-face-smile" style="color: #bdbdbd;"></i>
     
                     </div>
-                    <form class="flex-grow-1 "> 
+                    <div class="flex-grow-1 "> 
     
-                        <input type="text" class="w-100 ">
+                        <input type="text" class="w-100"
+                        v-model="newMessage" @keyup.enter="nuova()">
     
-                    </form>
+                    </div>
                     <div class="text-center icon">
     
                         <i class="fa-solid fa-microphone" style="color: #c2c2c2;"></i>
