@@ -78,6 +78,14 @@ img{
 #user-list{
     height: 70%;
 }
+.active{
+    background-color: lightgray;
+    opacity: 1;
+}
+#utent-list :hover{
+    background-color: lightgray;
+    opacity: 1;
+}
 /* 
     CHAT
 */
@@ -88,10 +96,12 @@ img{
 .inviated{
     background-color: #D5F9BA;
     min-width: 40%;
+    justify-self: end;
 }
 .received{
     background-color: white;
     min-width: 40%;
+    justify-self: start;
 }
 #write-area{
     height: 10%;
