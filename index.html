@@ -65,7 +65,8 @@
     
                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass" style="color: #c7c9cc;"></i></span>
                             <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"
-                            v-model="searchText" @keyup="searchContact()">
+                            v-model="searchText" @keyup="searchContact()" 
+                            @keyup.enter="searchNuova()">
                             
                         </div>
     
@@ -88,7 +89,7 @@
                                 </div>
                                 <div class="d-flex flex-column flex-grow-1 ">
                                     {{user.name}}
-                                    <span>
+                                    <span class="last-message">
     
                                         {{user.messages[user.messages.length-1].message}}
     
@@ -130,6 +131,7 @@
                 <div id="conversation" class="overflow-auto ">
                     
                     <div class="d-grid">
+
                         <div class="m-4 p-2 rounded"
                         v-for="(text,i) in contacts[counter].messages"
                             :class="text.status == 'sent' ? 'inviated' : 'received'">

@@ -51,6 +51,7 @@ main{
 }
 img{
     width: 100%;
+    border-radius: 50%;
 }
 #bell-container{
     border-radius: 50%;
@@ -78,13 +79,24 @@ img{
 #user-list{
     height: 70%;
 }
+.last-message{
+    color: Darkgray
+    ;
+}
 .active{
     background-color: lightgray;
     opacity: 1;
 }
+.active .last-message{
+    color: green;
+    font-weight: bold;
+}
 #utent-list :hover{
     background-color: lightgray;
     opacity: 1;
+}
+#utent-list :hover .last-message{
+    color: black;
 }
 /* 
     CHAT

@@ -212,6 +212,10 @@ createApp({
                         this.contacts[i].visible = false;
                     }
                 }
+            },
+
+            searchNuova(){
+                this.searchText = '';
             }
         },
 
