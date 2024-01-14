@@ -37,11 +37,16 @@
                         <img src="./img/avatar_io.jpg" alt="" class="img">
     
                     </div>
-                    <span class="fw-bolder align-self-center ">
+                    <div class="fw-bolder align-self-center flex-grow-1 ">
     
                         Riccardo
                     
-                    </span>
+                    </div>
+                    <div class="align-self-center ">
+    
+                        
+                        
+                    </div>
     
                 </div>
                 <div class="d-flex bg-info-subtle align-items-center" id="notification">
@@ -77,11 +82,11 @@
     
                     <div class="overflow-hidden" id="utent-list">
 
-                        <div v-for="(user,i) in contacts "
+                        <div v-for="(user,i) in contacts"
                             :class="{active :counter == i}"
                             @click="counter=i">
 
-                            <div v-if="user.visible === true" class="user d-flex align-items-center " >
+                            <div v-if="user.visible === true" class="user d-flex align-items-center">
                                 <div class="img-container">
 
                                     <img :src="user.avatar" alt="">
@@ -95,7 +100,7 @@
     
                                     </span>
                                 </div>
-                                <div class="text-end date">
+                                <div class="text-end date align-self-start ">
     
                                     {{user.messages[user.messages.length-1].date.split(' ')[1]}}
     
@@ -122,8 +127,8 @@
                         <span>
                             {{ contacts[counter].name}}
                         </span>
-                        <div>
-                            13:00
+                        <div class="text-secondary ">
+                            Ultimo accesso 13:00
                         </div>
                     </div>
     
@@ -132,12 +137,16 @@
                     
                     <div class="d-grid">
 
-                        <div class="m-4 p-2 rounded"
+                        <div class="m-4 p-2 rounded d-grid"
                         v-for="(text,i) in contacts[counter].messages"
                             :class="text.status == 'sent' ? 'inviated' : 'received'">
 
                             {{text.message}}
+                            <span class="d-flex align-self-end justify-content-end date-message">
 
+                                {{text.date.split(' ')[1]}}
+
+                            </span>
                         </div>
                         
                     </div>

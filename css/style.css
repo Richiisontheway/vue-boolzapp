@@ -11,6 +11,22 @@
 /* 
     GENERAL
 */
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+  /* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(83, 80, 80);
+    border-radius: 10px;
+}
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 10px;
+}
 body {
     width: 100vw;
     height: 100vh;
@@ -105,6 +121,11 @@ img{
     background-image: url(../img/mine.jpg);
     height: 80%;
 }
+.date-message{
+    font-size: small;
+    justify-self: end;
+}
+
 .inviated{
     background-color: #D5F9BA;
     min-width: 40%;

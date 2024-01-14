@@ -206,7 +206,6 @@ createApp({
                     const element = this.contacts[i].name.toLowerCase();
                     if(element.includes(this.searchText)){
                         this.contacts[i].visible = true;
-
                     }
                     else{
                         this.contacts[i].visible = false;
