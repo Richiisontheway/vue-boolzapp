@@ -127,8 +127,8 @@
                         <span>
                             {{ contacts[counter].name}}
                         </span>
-                        <div class="text-secondary ">
-                            Ultimo accesso 13:00
+                        <div class="text-secondary">
+                            Ultimo accesso {{contacts[counter].messages[contacts[counter].messages.length-1].date.split(' ')[1]}}
                         </div>
                     </div>
     
