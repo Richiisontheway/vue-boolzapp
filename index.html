@@ -44,7 +44,9 @@
                     </div>
                     <div class="align-self-center ">
     
-                        
+                        <i class="fa-solid fa-circle-notch mx-2 " style="color: #bababa;"></i>
+                        <i class="fa-solid fa-message mx-2" style="color: #bababa;"></i>
+                        <i class="fa-solid fa-ellipsis-vertical mx-2" style="color: #bababa;"></i>
                         
                     </div>
     
@@ -116,14 +118,14 @@
                 
             </aside>
             <div id="chat">
-                <div class="user d-flex bg-body-tertiary">
+                <div class="user d-flex bg-body-tertiary align-items-center ">
     
                     <div class="img-container align-items-center ">
     
                         <img :src="contacts[counter].avatar" alt="">
     
                     </div>
-                    <div>
+                    <div class="flex-grow-1 ">
                         <span>
                             {{ contacts[counter].name}}
                         </span>
@@ -131,7 +133,12 @@
                             Ultimo accesso {{contacts[counter].messages[contacts[counter].messages.length-1].date.split(' ')[1]}}
                         </div>
                     </div>
-    
+                    <div>
+                        <i class="fa-solid fa-paperclip mx-2 " style="color: #bababa;"></i>
+                        <i class="fa-solid fa-magnifying-glass mx-2" style="color: #bababa;"></i>
+                        <i class="fa-solid fa-ellipsis-vertical mx-2" style="color: #bababa;"></i>
+                    </div>
+                    
                 </div>
                 <div id="conversation" class="overflow-auto ">
                     
